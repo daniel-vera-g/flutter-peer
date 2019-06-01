@@ -10,6 +10,20 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  Future fetchFirebaseData() async {
+    var ds = await Firestore.instance
+        .collection('user')
+        .document(Provider.of<FirebaseUser>(context).uid)
+        .get();
+
+    var user = ds.exists
+        ? User.fromJson(ds.data)
+        : User(
+            email: Provider.of<FirebaseUser>(context).email,
+            name: Provider.of<FirebaseUser>(context).displayName,
+            profilePictureUrl: Provider.of<FirebaseUser>(context).photoUrl);
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -121,6 +135,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                       ),
                                     ],
                                   ),
+                                  // new Text(
+                                  //   'Name',
+                                  //   style: TextStyle(
+                                  //       fontSize: 16.0,
+                                  //       fontWeight: FontWeight.bold),
+                                  // ),
                                 ],
                               )),
                           Padding(

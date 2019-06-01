@@ -18,6 +18,7 @@ main() async {
       stream: FirebaseAuth.instance.onAuthStateChanged,
       initialData: user,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         /*     theme: ThemeData(accentColor: Colors.green),
         darkTheme: ThemeData.dark(), */
         title: "Find peers",
