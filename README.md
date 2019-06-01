@@ -1,4 +1,4 @@
-# Flutterpeer
+# FlutterPeer
 
 Find other Flutter peers, join projects or find other flutter developers.
 
@@ -17,7 +17,7 @@ Solve these problems now by downloading FlutterPeer!
 ## Screenshots
 
 ![alt text](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png "Home Page Screenshot")
-![alt text](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01.png "Discover Page Screenshot")
+![alt text](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01_2.png "Discover Page Screenshot")
 
 ## Getting Started
 
