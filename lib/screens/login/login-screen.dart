@@ -32,13 +32,15 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final welcomeText = Text('New to FlutterPeer? Sign in Here:',
+        style: TextStyle(fontSize: 24));
+
     final emailField = TextField(
       obscureText: false,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Email",
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))),
     );
 
     final passwordField = TextField(
@@ -46,13 +48,12 @@ class _LoginState extends State<Login> {
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Password",
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0))),
     );
 
     final loginButon = Material(
         elevation: 5.0,
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(5.0),
         color: Color(0xff01A0C7),
         child: MaterialButton(
             minWidth: MediaQuery.of(context).size.width,
@@ -65,8 +66,8 @@ class _LoginState extends State<Login> {
 
     final googleButton = Material(
         elevation: 5.0,
-        borderRadius: BorderRadius.circular(30.0),
-        color: Color(0x0000FF),
+        borderRadius: BorderRadius.circular(5.0),
+        color: Color(0xff01A0C7),
         child: MaterialButton(
             minWidth: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -93,7 +94,7 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // TODO Logo or name for App
-
+            welcomeText,
             SizedBox(height: 45.0),
             emailField,
             SizedBox(height: 25.0),
