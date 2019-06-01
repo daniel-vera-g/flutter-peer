@@ -10,6 +10,8 @@ class App {
   String appIconUrl;
   List<String> screenshotUrls;
 
+  int votes;
+
   App(
       {this.name,
       this.description,

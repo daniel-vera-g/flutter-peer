@@ -4,7 +4,7 @@ class User {
   String uid;
   String profilePictureUrl;
 
-  User({this.name, this.uid, this.profilePictureUrl});
+  User({this.name, this.email, this.uid, this.profilePictureUrl});
 
   User.fromJson(Map<String, dynamic> json)
       : name = json['name'],
