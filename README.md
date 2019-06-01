@@ -16,8 +16,8 @@ Solve these problems now by downloading FlutterPeer!
 
 ## Screenshots
 
-![Home Page Screenshot](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png "Home Page Screenshot")
-![Discover Page Screenshot](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01-2.png "Discover Page Screenshot")
+<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png"  width="250">
+<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01-2.png"  width="250">
 
 ## Getting Started
 
