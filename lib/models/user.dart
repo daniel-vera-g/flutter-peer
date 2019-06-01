@@ -9,11 +9,13 @@ class User {
   User.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         uid = json['uid'],
+        email = json['email'],
         profilePictureUrl = json['profilePictureUrl'];
 
   Map<String, dynamic> toJson() => {
         'name': name,
         'uid': uid,
         'profilePictureUrl': profilePictureUrl,
+        'email': email,
       };
 }

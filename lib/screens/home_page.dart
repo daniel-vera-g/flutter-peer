@@ -64,9 +64,8 @@ class _OverviewPageState extends State<OverviewPage> {
                 return Container();
               }
 
-              List<App> apps = snap.data.documents
-                  .map((ds) => App.fromJson(ds.data))
-                  .toList();
+              List<App> apps =
+                  snap.data.documents.map((ds) => App.fromDS(ds)).toList();
 
               if (apps.length == 0) {
                 return Padding(
@@ -110,9 +109,8 @@ class _OverviewPageState extends State<OverviewPage> {
                 return Container();
               }
 
-              List<App> apps = snap.data.documents
-                  .map((ds) => App.fromJson(ds.data))
-                  .toList();
+              List<App> apps =
+                  snap.data.documents.map((ds) => App.fromDS(ds)).toList();
               if (apps.length == 0) {
                 return Padding(
                   padding: const EdgeInsets.all(20.0),

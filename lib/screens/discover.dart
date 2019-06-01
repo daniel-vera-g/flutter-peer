@@ -12,15 +12,17 @@ class _DiscoverPageState extends State<DiscoverPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream:
-          Firestore.instance.collection('apps').orderBy('votes').snapshots(),
+      stream: Firestore.instance
+          .collection('apps')
+          .orderBy('votes', descending: true)
+          .snapshots(),
       builder: (context, snap) {
         if (!snap.hasData) {
           return LinearProgressIndicator();
         }
 
         List<App> apps =
-            snap.data.documents.map((ds) => App.fromJson(ds.data)).toList();
+            snap.data.documents.map((ds) => App.fromDS(ds)).toList();
 
         if (apps.length == 0) {
           return Padding(
