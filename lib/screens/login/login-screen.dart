@@ -43,8 +43,47 @@ class _LoginState extends State<Login> {
               textAlign: TextAlign.center,
             )));
 
-    return Container(
-      child: new Text("Login"),
+    final googleButton = Material(
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Color(0x0000FF),
+        child: MaterialButton(
+            minWidth: MediaQuery.of(context).size.width,
+            padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+            onPressed: () {},
+            child: Text(
+              "Login with Google",
+              textAlign: TextAlign.center,
+            )));
+
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(36.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+            // TODO Logo or name for App
+
+            SizedBox(height: 45.0),
+            emailField,
+            SizedBox(height: 25.0),
+            passwordField,
+            SizedBox(
+              height: 35.0,
+            ),
+            loginButon,
+            SizedBox(
+              height: 15.0,
+            ),
+            googleButton,
+            SizedBox(
+              height: 15.0,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
