@@ -5,6 +5,7 @@ class App {
   String link;
 
   String owner;
+  String ownerName;
 
   App(this.name, this.description, this.category, this.link, this.owner);
 
@@ -13,6 +14,7 @@ class App {
         description = json['description'],
         category = json['category'],
         link = json['link'],
+        ownerName = json['ownerName'],
         owner = json['owner'];
 
   Map<String, dynamic> toJson() => {
@@ -20,6 +22,7 @@ class App {
         'description': description,
         'category': category,
         'link': link,
+        'ownerName': ownerName,
         'owner': owner,
       };
 }
