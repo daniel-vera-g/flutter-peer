@@ -1,21 +1,25 @@
 class App {
-  final String name;
-  final String description;
-  final String category;
-  final String link;
+  String name;
+  String description;
+  String category;
+  String link;
 
-  App(this.name, this.description, this.category, this.link);
+  String owner;
+
+  App(this.name, this.description, this.category, this.link, this.owner);
 
   App.fromJson(Map<String, dynamic> json)
       : name = json['name'],
         description = json['description'],
         category = json['category'],
-        link = json['link'];
+        link = json['link'],
+        owner = json['owner'];
 
   Map<String, dynamic> toJson() => {
         'name': name,
         'description': description,
         'category': category,
         'link': link,
+        'owner': owner,
       };
 }
