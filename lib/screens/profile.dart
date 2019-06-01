@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -9,7 +10,6 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return Scaffold(
         body: new Container(
       color: Colors.white,
@@ -134,7 +134,8 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           )),
 
-
+                      // The email of the user
+                      // TODO add custom email from firebase or
                       Padding(
                           padding: EdgeInsets.only(
                               left: 25.0, right: 25.0, top: 25.0),
@@ -167,6 +168,66 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           )),
+
+                      // Logout
+                      Padding(
+                          padding: EdgeInsets.only(
+                              left: 25.0, right: 25.0, top: 2.0),
+                          child: new Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Container(),
+                                  ),
+                                  RaisedButton(
+                                      color: Colors.red,
+                                      child: Text("Logout"),
+                                      onPressed: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (_) => new AlertDialog(
+                                                  title: new Text("Log out?"),
+                                                  content: Text(
+                                                      "Do you really want to log out?"),
+                                                  actions: <Widget>[
+                                                    // usually buttons at the bottom of the dialog
+                                                    new FlatButton(
+                                                      textColor: Colors.black,
+                                                      child: new Text("No"),
+                                                      onPressed: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                    ),
+                                                    RaisedButton(
+                                                      child: Text("Yes"),
+                                                      textColor: Colors.black,
+                                                      onPressed: () async {
+                                                        await FirebaseAuth
+                                                            .instance
+                                                            .signOut();
+                                                        Navigator.of(context)
+                                                            .pushReplacementNamed(
+                                                                '/login');
+                                                      },
+                                                    )
+                                                  ],
+                                                ));
+                                      }
+
+                                      // onPressed: () async {
+                                      //   // TODO add dialog when before log out
+                                      //   await FirebaseAuth.instance.signOut();
+                                      //   Navigator.of(context)
+                                      //       .pushReplacementNamed('/login');
+                                      // },
+                                      )
+                                ],
+                              )
+                            ],
+                          )),
                     ],
                   ),
                 ),
@@ -175,15 +236,6 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
-=======
-    return Center(
-        child: RaisedButton(
-      child: Text('logout'),
-      onPressed: () async {
-        await FirebaseAuth.instance.signOut();
-        Navigator.of(context).pushReplacementNamed('/login');
-      },
->>>>>>> 68ef594323fdb3cbb49fcc45e2b33ae961367f3a
     ));
   }
 }
