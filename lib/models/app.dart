@@ -7,7 +7,16 @@ class App {
   String owner;
   String ownerName;
 
-  App(this.name, this.description, this.category, this.link, this.owner);
+  String appIconUrl;
+  List<String> screenshotUrls;
+
+  App(
+      {this.name,
+      this.description,
+      this.category,
+      this.link,
+      this.owner,
+      this.appIconUrl});
 
   App.fromJson(Map<String, dynamic> json)
       : name = json['name'],
@@ -15,6 +24,8 @@ class App {
         category = json['category'],
         link = json['link'],
         ownerName = json['ownerName'],
+        appIconUrl = json['appIconUrl'],
+        screenshotUrls = json['screenshotUrls'],
         owner = json['owner'];
 
   Map<String, dynamic> toJson() => {
@@ -24,5 +35,7 @@ class App {
         'link': link,
         'ownerName': ownerName,
         'owner': owner,
+        'appIconUrl': appIconUrl,
+        'screenshotUrls': screenshotUrls,
       };
 }
