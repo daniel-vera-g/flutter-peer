@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "217147605638",
+    "firebase_url": "https://flutter-peer.firebaseio.com",
+    "project_id": "flutter-peer",
+    "storage_bucket": "flutter-peer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217147605638:android:257ce269743d0587",
+        "android_client_info": {
+          "package_name": "app.flutterpeer.flutterpeer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217147605638-jburffoj0k07hof04mj947gbqpvt2lhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEyQmI_tQCLVNgABDe5g6X7uifpVfy_pY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217147605638-jburffoj0k07hof04mj947gbqpvt2lhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
