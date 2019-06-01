@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutterpeer/models/user.dart';
+import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -8,6 +11,19 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+
+  Future fetchFirebaseData() async {
+    var ds =
+        await Firestore.instance.collection('user').document(app.owner).get();
+
+    var user = ds.exists
+        ? User.fromJson(ds.data)
+        : User(
+            email: Provider.of<FirebaseUser>(context).email,
+            name: Provider.of<FirebaseUser>(context).displayName,
+            profilePictureUrl: Provider.of<FirebaseUser>(context).photoUrl);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,12 +127,35 @@ class _ProfilePageState extends State<ProfilePage> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
-                                  new Text(
-                                    'Name',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
+                                  new FutureBuilder(
+                                    future: fetchFirebaseData(),
+                                    builder: (BuildContext context,
+                                        AsyncSnapshot snapshot) {
+                                      if (snapshot.hasData) {
+                                        if (snapshot.data != null) {
+                                          return new Column(
+                                            children: <Widget>[
+                                              new Expanded(
+                                                  child: new ListView(
+                                                // children: _getData(snapshot),
+                                                children: <Widget>[
+                                                  Text(snapshot.data.name),
+                                                ]
+                                              ))
+                                            ],
+                                          );
+                                        }
+                                      } else {
+                                        return new Text("Your name could not be found");
+                                      }
+                                    },
                                   ),
+                                  // new Text(
+                                  //   'Name',
+                                  //   style: TextStyle(
+                                  //       fontSize: 16.0,
+                                  //       fontWeight: FontWeight.bold),
+                                  // ),
                                 ],
                               ),
                             ],
@@ -161,12 +200,13 @@ class _ProfilePageState extends State<ProfilePage> {
                               left: 25.0, right: 25.0, top: 2.0),
                           child: new Row(
                             mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              new Flexible(
-                                // TODO add email
-                                child: Text("Your email"),
-                              ),
-                            ],
+
+                            // children: <Widget>[
+                            //   new Flexible(
+                            //     // TODO add email
+                            //     child: Text("Your email"),
+                            //   ),
+                            // ],
                           )),
 
                       // Logout
