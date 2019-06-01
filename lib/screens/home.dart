@@ -15,9 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Find peers"),
-      ),
+      /*   appBar: AppBar(
+        title: Text("Flutter Peer"),
+      ), */
       // body: Row(
       //  children: <Widget>[
 

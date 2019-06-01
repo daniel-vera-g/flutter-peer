@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterpeer/models/app.dart';
+import 'package:flutterpeer/models/user.dart';
+import 'package:flutterpeer/screens/dialog_helper.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 
@@ -23,18 +25,41 @@ class _AddProjectPageState extends State<AddProjectPage> {
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(MdiIcons.plus),
         label: Text("Create"),
-        onPressed: () {
+        onPressed: () async {
           // Validate will return true if the form is valid, or false if
           // the form is invalid.
           if (_form.currentState.validate()) {
             _form.currentState.save();
+
+            showLoadingDialog(context, 'Creating app...');
             // If the form is valid, display a snackbar. In the real world, you'd
             // often want to call a server or save the information in a database
             /*    Scaffold.of(context)
                 .showSnackBar(SnackBar(content: Text('Processing Data'))); */
 
             app.owner = Provider.of<FirebaseUser>(context).uid;
+            var ds = await Firestore.instance
+                .collection('user')
+                .document(app.owner)
+                .get();
+
+            var user = ds.exists
+                ? User.fromJson(ds.data)
+                : User(
+                    email: Provider.of<FirebaseUser>(context).email,
+                    name: Provider.of<FirebaseUser>(context).displayName,
+                    profilePictureUrl:
+                        Provider.of<FirebaseUser>(context).photoUrl);
+            app.ownerName = user.name;
+
+            app.following = [];
+
+            app.screenshotUrls = [];
+            app.votes = 0;
+
             Firestore.instance.collection('apps').add(app.toJson());
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
           }
         },
       ),

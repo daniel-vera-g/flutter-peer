@@ -18,8 +18,8 @@ main() async {
       stream: FirebaseAuth.instance.onAuthStateChanged,
       initialData: user,
       child: MaterialApp(
-        theme: ThemeData(accentColor: Colors.green),
-        darkTheme: ThemeData.dark(),
+        /*     theme: ThemeData(accentColor: Colors.green),
+        darkTheme: ThemeData.dark(), */
         title: "Find peers",
         routes: routes,
       )));

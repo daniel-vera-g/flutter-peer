@@ -17,6 +17,9 @@ class _OverviewPageState extends State<OverviewPage> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
+        SizedBox(
+          height: 10,
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -65,6 +68,15 @@ class _OverviewPageState extends State<OverviewPage> {
                   .map((ds) => App.fromJson(ds.data))
                   .toList();
 
+              if (apps.length == 0) {
+                return Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    'Nothing here... Create your first app with the button on the top right!',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                );
+              }
               return ProjectList(apps);
             },
           ),
@@ -90,8 +102,8 @@ class _OverviewPageState extends State<OverviewPage> {
           child: StreamBuilder<QuerySnapshot>(
             stream: Firestore.instance
                 .collection('apps')
-                .where('owner',
-                    isEqualTo: Provider.of<FirebaseUser>(context).uid)
+                .where('following',
+                    arrayContains: Provider.of<FirebaseUser>(context).uid)
                 .snapshots(),
             builder: (context, snap) {
               if (!snap.hasData) {
@@ -101,6 +113,15 @@ class _OverviewPageState extends State<OverviewPage> {
               List<App> apps = snap.data.documents
                   .map((ds) => App.fromJson(ds.data))
                   .toList();
+              if (apps.length == 0) {
+                return Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    'Nothing here... Find amazing apps to follow in the "Discover" Tab!',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                );
+              }
 
               return ProjectList(apps);
             },
