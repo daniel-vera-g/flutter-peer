@@ -12,6 +12,8 @@ class App {
 
   int votes;
 
+  List<String> following;
+
   App(
       {this.name,
       this.description,
@@ -27,7 +29,9 @@ class App {
         link = json['link'],
         ownerName = json['ownerName'],
         appIconUrl = json['appIconUrl'],
-        screenshotUrls = json['screenshotUrls'],
+        screenshotUrls = List<String>.from(['screenshotUrls']),
+        votes = json['votes'],
+        following = List<String>.from(['following']),
         owner = json['owner'];
 
   Map<String, dynamic> toJson() => {
@@ -39,5 +43,7 @@ class App {
         'owner': owner,
         'appIconUrl': appIconUrl,
         'screenshotUrls': screenshotUrls,
+        'votes': votes,
+        'following': following,
       };
 }
