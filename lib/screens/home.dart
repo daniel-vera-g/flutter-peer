@@ -13,11 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text("Find peers"),
       ),
-      // body: Row(
-      //  children: <Widget>[
-
-      //  ], 
-      // )
+      body: ListView(
+        children: <Widget>[
+                      
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         items: [
