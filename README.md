@@ -16,8 +16,9 @@ Solve these problems now by downloading FlutterPeer!
 
 ## Screenshots
 
-<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png"  width="250">
-<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01-2.png"  width="250">
+<div style="float: left; border: 2px solid black;">
+<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01-2.png" width="350"></div>
+<div style="float: left; border: 2px solid black"><img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png" width="350"></div>
 
 ## Getting Started
 
