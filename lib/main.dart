@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
 
 import 'screens/home.dart';
 import 'screens/login/login-screen.dart';
@@ -13,8 +14,13 @@ main() async {
     '/login': (BuildContext context) => Login()
   };
 
-  runApp(MaterialApp(
-    title: "Find peers",
-    routes: routes,
-  ));
+  runApp(StreamProvider<FirebaseUser>.value(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      initialData: user,
+      child: MaterialApp(
+        theme: ThemeData(accentColor: Colors.green),
+        darkTheme: ThemeData.dark(),
+        title: "Find peers",
+        routes: routes,
+      )));
 }

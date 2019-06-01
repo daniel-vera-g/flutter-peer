@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -8,6 +9,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
         body: new Container(
       color: Colors.white,
@@ -173,6 +175,15 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ],
       ),
+=======
+    return Center(
+        child: RaisedButton(
+      child: Text('logout'),
+      onPressed: () async {
+        await FirebaseAuth.instance.signOut();
+        Navigator.of(context).pushReplacementNamed('/login');
+      },
+>>>>>>> 68ef594323fdb3cbb49fcc45e2b33ae961367f3a
     ));
   }
 }
