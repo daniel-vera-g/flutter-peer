@@ -8,9 +8,7 @@ main() async {
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
 
   final routes = <String, WidgetBuilder>{
-    '/': (BuildContext context) => user == null ? Login() : HomeScreen(),
-    '/home': (BuildContext context) => HomeScreen(),
-    '/login': (BuildContext context) => Login()
+    '/': (BuildContext context) => user == null ? HomeScreen() : HomeScreen()
   };
 
   runApp(MaterialApp(
