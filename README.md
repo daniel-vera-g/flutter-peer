@@ -20,6 +20,6 @@ Solve these problems now by downloading FlutterPeer!
 
 ## Getting Started
 
-1. Downloads the app
-2. With your email or Google account
-3. Add projects and see projects of other people
+1. Download the app
+2. Login with your E-mail or Google account
+3. Add projects and see projects of other developers
