@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutterpeer/screens/login/login-screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-main() {
+import 'screens/home.dart';
+import 'screens/login/login-screen.dart';
+
+main() async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+
   final routes = <String, WidgetBuilder>{
-    '/home': (BuildContext context) => new Login()
+    '/': (BuildContext context) => user == null ? Login() : HomeScreen()
   };
 
   runApp(MaterialApp(
     title: "Find peers",
     routes: routes,
-    home: new Login(),
   ));
 }
