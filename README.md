@@ -17,7 +17,7 @@ Solve these problems now by downloading FlutterPeer!
 ## Screenshots
 
 Discover | Home
---- | --- | ---
+--- | ---
 ![Discover](./assets/discover.png) | ![Home](./assets/home.png)
 
 <center>
