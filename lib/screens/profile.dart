@@ -188,6 +188,62 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ],
                               )),
+                          // Logout
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 2.0),
+                              child: new Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                        child: Container(),
+                                      ),
+                                      RaisedButton(
+                                          color: Colors.red,
+                                          child: Text("Logout"),
+                                          onPressed: () {
+                                            showDialog(
+                                                context: context,
+                                                builder: (_) => new AlertDialog(
+                                                      title:
+                                                          new Text("Log out?"),
+                                                      content: Text(
+                                                          "Do you really want to log out?"),
+                                                      actions: <Widget>[
+                                                        // usually buttons at the bottom of the dialog
+                                                        new FlatButton(
+                                                          textColor:
+                                                              Colors.black,
+                                                          child: new Text("No"),
+                                                          onPressed: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                        ),
+                                                        RaisedButton(
+                                                          child: Text("Yes"),
+                                                          textColor:
+                                                              Colors.black,
+                                                          onPressed: () async {
+                                                            await FirebaseAuth
+                                                                .instance
+                                                                .signOut();
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pushReplacementNamed(
+                                                                    '/login');
+                                                          },
+                                                        )
+                                                      ],
+                                                    ));
+                                          })
+                                    ],
+                                  )
+                                ],
+                              )),
                         ],
                       ),
                     ),
