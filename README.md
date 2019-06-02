@@ -10,6 +10,7 @@ Or have you ever wanted to get into coding with Flutter but didn't have the righ
 Solve these problems now by downloading FlutterPeer!
 
 ## Features
+
 - Discover apps of other developers (by popularity, category and tags)
 - Follow, like and join other projects
 - Contact other team members
@@ -22,9 +23,9 @@ Discover | Home
 
 <center>
 
-Account |
---- |
-![Profile](./assets/profile.png)
+Account | Login
+--- | ---
+![Profile](./assets/profile.png) | ![Login](./assets/login.png)
 
 </center>
 
@@ -33,3 +34,9 @@ Account |
 1. Download the app
 2. Login with your E-mail or Google account
 3. Add projects and see projects of other developers
+
+## Build with
+
+1. Flutter
+2. Material Design and Icons
+3. Firebase
