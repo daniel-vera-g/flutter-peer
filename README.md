@@ -16,13 +16,17 @@ Solve these problems now by downloading FlutterPeer!
 
 ## Screenshots
 
-Discover | Home | Account
+Discover | Home | 
 --- | --- | ---
-![Discover](./assets/discover.png) | ![Home](./assets/home.png) | ![Account](./assets/profile.png)
+![Discover](./assets/discover.png) | ![Home](./assets/home.png) 
 
-<!-- <div style="float: left; border: 2px solid black;">
-<img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/2019-06-01-2.png" width="350"></div>
-<div style="float: left; border: 2px solid black"><img src="https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/Screenshot_20190601-193132.png" width="350"></div> -->
+<center>
+
+Account |
+--- |
+![Profile](./assets/profile.png)
+
+</center>
 
 ## Getting Started
 
