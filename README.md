@@ -2,7 +2,7 @@
 
 Find other Flutter peers, join projects or find other flutter developers.
 
-![alt text](https://github.com/daniel-vera-g/flutter-peer/blob/master/assets/FlutterPeer_Logo.jpg "FlutterPeer Logo")
+![Flutter Peer Logo](./assets/FlutterPeer_Logo.jpg)
 
 Have you ever had a cool idea for a Flutter App but didn't have the right team members?
 Or have you ever wanted to get into coding with Flutter but didn't have the right idea?
@@ -16,9 +16,9 @@ Solve these problems now by downloading FlutterPeer!
 
 ## Screenshots
 
-Discover | Home | 
+Discover | Home
 --- | --- | ---
-![Discover](./assets/discover.png) | ![Home](./assets/home.png) 
+![Discover](./assets/discover.png) | ![Home](./assets/home.png)
 
 <center>
 
